@@ -54,8 +54,9 @@ std::istream& operator>>(std::istream& is, SPriceMessage& element)
 // Make stdout working for SPnLMessage
 std::ostream& operator<<(std::ostream& os, const SPnLMessage& element)
 {
-	os << element.m_sMessageType << element.m_nMilliseconds << element.m_sSymbolName
-	   << element.m_nCurrentSize << element.m_dPnL;
+	string sep = " ";
+	os << element.m_sMessageType << sep << element.m_nMilliseconds << sep << element.m_sSymbolName << sep
+	   << element.m_nCurrentSize << sep << element.m_dPnL;
 	return os;
 }
 
